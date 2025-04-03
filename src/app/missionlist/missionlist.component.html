@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/filter" class="filter-button">Filters</a>
+  </div>
+</nav>
+
+<div class="page-container">
+  <header class="page-header">
+    <h1>SpaceX Mission Launch List</h1>
+  </header>
+
+  <div class="mission-grid">
+    <div *ngFor="let mission of listMission" class="mission-card">
+      <a routerLink="/{{ mission.flight_number }}" class="mission-link">
+        <img
+          src="{{ mission.links.mission_patch_small }}"
+          alt="{{ mission.mission_name }} Patch"
+          class="mission-patch-small"
+        />
+        <div class="mission-info">
+          <h2>{{ mission.mission_name }}</h2>
+          <p><strong>Launch Year:</strong> {{ mission.launch_year }}</p>
+          <p>
+            <strong>Successful Launch:</strong>
+            {{ mission.launch_success ? "Yes" : "No" }}
+          </p>
+          <p>
+            <strong>Landing Intent:</strong>
+            {{
+              mission.rocket.first_stage.cores[0].landing_intent ? "Yes" : "No"
+            }}
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
