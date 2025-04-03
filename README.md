@@ -8,7 +8,7 @@
 
 Explore the [Live Demo](https://anthony-labtest2.vercel.app/) by clicking the button below:
 
-<a href="https://anthony-labtest.vercel.app/" target="_blank">
+<a href="https://anthony-labtest.netlify.app/" target="_blank">
   <button>Live Demo</button>
 </a>
 
